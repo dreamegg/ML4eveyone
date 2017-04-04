@@ -25,7 +25,15 @@ train = opt.minimize(cost)
 sess = tf.Session()
 sess.run(tf.global_variables_initializer())
 
-for step in range (50000001) : 
-    cost_val, hy_val, _ = sess.run([cost, hypo, train], feed_dict = { x: x_data, y: y_data})
+for step in range (2001) : 
+    sess.run([train], feed_dict = { x: x_data, y: y_data})
+    #cost_val= sess.run([cost], feed_dict = { x: x_data, y: y_data})
+    #hy_val= sess.run([hypo], feed_dict = { x: x_data, y: y_data})
+    #_ = sess.run([train], feed_dict = { x: x_data, y: y_data})
     if step % 1000 == 0 :
-        print(step, "Cost:", cost_val) # "Prediction : " ,hy_val)
+        print(step, "Cost:", sess.run(cost, feed_dict = { x: x_data, y: y_data})) # "Prediction : " ,hy_val)
+
+print (hypo)
+print("1st Score will be" , sess.run(hypo, feed_dict={x:[[100, 70, 101]]}))
+print("2nd Score will be" , sess.run(hypo, feed_dict={x:[[60, 70, 110], [90, 100, 80]]}))
+
