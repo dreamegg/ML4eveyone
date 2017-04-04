@@ -5,13 +5,16 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>719161f8-7918-4368-b575-69cfb4c16076</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>ML4eveyone.py</StartupFile>
+    <StartupFile>lab4.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>ML4eveyone</Name>
     <RootNamespace>ML4eveyone</RootNamespace>
+    <IsWindowsApplication>False</IsWindowsApplication>
+    <InterpreterId>{7d72acc2-170a-475b-8d50-76fabd7375c6}</InterpreterId>
+    <InterpreterVersion>3.5</InterpreterVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,7 +25,19 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="lab4.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="ML4eveyone.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="{7d72acc2-170a-475b-8d50-76fabd7375c6}\3.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="data-01-test-score.csv" />
+    <Content Include="data-02-stock_daily.csv" />
+    <Content Include="data-03-diabetes.csv" />
+    <Content Include="data-04-zoo.csv" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
