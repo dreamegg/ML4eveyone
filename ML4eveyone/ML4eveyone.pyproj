@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>719161f8-7918-4368-b575-69cfb4c16076</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>lab4.py</StartupFile>
+    <StartupFile>module1.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -25,10 +25,16 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="lab04-1.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="lab4.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ML4eveyone.py" />
+    <Compile Include="module1.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="{7d72acc2-170a-475b-8d50-76fabd7375c6}\3.5" />
