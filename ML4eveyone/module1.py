@@ -30,11 +30,11 @@ correct_p = tf.equal(prediction, tf.argmax(Y_1Hot,1))
 acuuracy = tf.reduce_mean(tf.cast(correct_p, tf.float32))
 
 with tf.Session() as sess :
-    sess.run(tf.global_variables_initializer())
+    sess.run(tf.global_variables_initializer()) 
 
     for step in range(2000) : 
         sess.run(opti, feed_dict = {X: x_data, Y: y_data})
-        if step % 100 ==0 :
+        if step % 10 ==0 :
             loss, acc = sess.run([cost, acuuracy], feed_dict = {X: x_data, Y: y_data })
             print ("Step : {:5} \t Loss : {:.3f}\t Acc : {:.2%}".format(step, loss, acc))
 

@@ -45,20 +45,20 @@ thread = tf.train.start_queue_runners(sess=sess, coord=coord)
 print (coord, thread)
 
 
-for step in range (20001) : 
+out =[]
+for step in range (2001) : 
     x_batch, y_batch = sess.run([train_x_batch,train_y_batch])
     if step ==0 :
         print (x_batch, y_batch)
     cost_val, hy_val, _ = sess.run([cost, hypo, train], feed_dict = { x: x_batch, y: y_batch})
-    plt.plot(step,  cost_val)
-    #cost_val= sess.run([cost], feed_dict = { x: x_data, y: y_data})
-    #hy_val= sess.run([hypo], feed_dict = { x: x_data, y: y_data})
-    #_ = sess.run([train], feed_dict = { x: x_data, y: y_data})
+    out.append(cost_val)
     if step % 100 == 0 :
         print(step, "Cost:", cost_val) # "Prediction : " ,hy_val)
-        plt.clf()
-        plt.show()
 
+
+plt.plot(range (2001),  out)
+plt.ylabel('Cost')
+plt.show()
 
 coord.request_stop()
 coord.join(thread)
